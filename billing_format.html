@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashish Enterprises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .header {
+            text-align: center;
+        }
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header .address {
+            font-size: 18px;
+            font-weight: normal;
+        }
+        .line {
+            margin-top: 20px;
+            border-bottom: 2px solid black;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 2px solid black; /* Add border to the entire table */
+        }
+        .table th, .table td {
+            border-right: 2px solid black;
+            padding: 8px;
+            vertical-align: top;
+        }
+        .table th:first-child, .table td:first-child {
+            border-left: 2px solid black; /* Add left border to the first cell */
+        }
+        .table th:last-child, .table td:last-child {
+            border-right: none;
+        }
+        .col-item {
+            width: 60%;
+            border-top: 2px solid black;
+        }
+        .col-quantity {
+            width: 10%;
+            border-top: 2px solid black;
+        }
+        .col-price {
+            width: 10%;
+            border-top: 2px solid black;
+        }
+        .col-total {
+            width: 20%;
+            border-right: 2px solid black; /* Add right border to the last column */
+        }
+        .total-box {
+            height: 800px; /* Adjust height as needed */
+            border-top: 2px solid black;
+            border-right: 2px solid black; /* Add right border to the total box */
+            border-left: 2px solid black; /* Add left border to the total box */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="title">Kashish Enterprises</p>
+        <p class="address">Shop address here</p>
+    </div>
+    <div class="info">
+        <div class="details">
+            <p>Customer Name: ________________________</p>
+            <p>Customer Address: ______________________</p>
+        </div>
+        <div class="date">
+            <p>Date: __________</p>
+        </div>
+    </div>
+    <div class="line"></div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="col-item">Item Name</th>
+                <th class="col-quantity">Quantity</th>
+                <th class="col-price">Price</th>
+                <th class="col-total">Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Additional rows can be added here -->
+            <tr>
+                <td class="col-item"></td>
+                <td class="col-quantity"></td>
+                <td class="col-price"></td>
+                <td class="col-total total-box"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
