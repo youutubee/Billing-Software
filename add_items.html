@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Items</title>
+    <link rel="stylesheet" href="add_items.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Add Items</h2>
+            <form id="addItemForm">
+                <label for="categorySelect">Select Category:</label>
+                <select id="categorySelect" name="category" onchange="populateSizes()">
+                    <option value="category1">Category 1</option>
+                    <option value="category2">Category 2</option>
+                    <!-- Add more categories as needed -->
+                </select>
+
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" name="itemName" required>
+                
+                <div id="sizesContainer">
+                    <!-- Sizes will be populated dynamically based on selected category -->
+                </div>
+                
+                <button type="button" id="addSizeButton">Add Size</button>
+                
+                <div class="form-buttons">
+                    <button type="submit" id="saveButton">Save</button>
+                    <button type="button" id="cancelButton">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function populateSizes() {
+            var category = document.getElementById('categorySelect').value;
+            var sizesContainer = document.getElementById('sizesContainer');
+            sizesContainer.innerHTML = ''; // Clear previous sizes
+
+            // Simulated data based on selected category
+            if (category === 'category1') {
+                sizesContainer.innerHTML = `
+                    <h3>Item Prices (Category 1 Sizes):</h3>
+                    <div class="size-input">
+                        <label for="size1">Size 1:</label>
+                        <input type="text" name="size[]" placeholder="Enter size" required>
+                        <label for="price1">Price 1:</label>
+                        <input type="text" name="price[]" placeholder="Enter price" required>
+                    </div>
+                    <div class="size-input">
+                        <label for="size2">Size 2:</label>
+                        <input type="text" name="size[]" placeholder="Enter size" required>
+                        <label for="price2">Price 2:</label>
+                        <input type="text" name="price[]" placeholder="Enter price" required>
+                    </div>
+                `;
+            } else if (category === 'category2') {
+                sizesContainer.innerHTML = `
+                    <h3>Item Prices (Category 2 Sizes):</h3>
+                    <div class="size-input">
+                        <label for="size1">Size 1:</label>
+                        <input type="text" name="size[]" placeholder="Enter size" required>
+                        <label for="price1">Price 1:</label>
+                        <input type="text" name="price[]" placeholder="Enter price" required>
+                    </div>
+                    <div class="size-input">
+                        <label for="size2">Size 2:</label>
+                        <input type="text" name="size[]" placeholder="Enter size" required>
+                        <label for="price2">Price 2:</label>
+                        <input type="text" name="price[]" placeholder="Enter price" required>
+                    </div>
+                    <div class="size-input">
+                        <label for="size3">Size 3:</label>
+                        <input type="text" name="size[]" placeholder="Enter size" required>
+                        <label for="price3">Price 3:</label>
+                        <input type="text" name="price[]" placeholder="Enter price" required>
+                    </div>
+                `;
+            }
+            // Add more conditions for other categories if needed
+        }
+
+        document.getElementById('addSizeButton').addEventListener('click', function() {
+            const sizesContainer = document.getElementById('sizesContainer');
+            const sizeInput = document.createElement('div');
+            sizeInput.classList.add('size-input');
+            sizeInput.innerHTML = `
+                <label for="size">Size:</label>
+                <input type="text" name="size[]" placeholder="Enter size" required>
+                <label for="price">Price:</label>
+                <input type="text" name="price[]" placeholder="Enter price" required>
+            `;
+            sizesContainer.appendChild(sizeInput);
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', function() {
+            window.close();
+        });
+
+        document.getElementById('addItemForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Save the item details and prices logic goes here
+            alert('Item added successfully!');
+            window.close();
+        });
+    </script>
+</body>
+</html>

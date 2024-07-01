@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <link rel="stylesheet" href="add_category.css">
+    <style>
+        /* Additional CSS for button alignment */
+        .form-buttons {
+            display: flex;
+            justify-content: space-between; /* Align buttons horizontally with space between them */
+            width: 100%;
+            margin-top: 20px; /* Add margin to create gap from the line above */
+            border-top: 1px solid white; /* Add a line above the buttons */
+            padding-top: 20px; /* Padding above the line */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Add Category</h2>
+            <form id="categoryForm">
+                <label for="categoryName">Category Name:</label>
+                <input type="text" id="categoryName" name="categoryName" required>
+                
+                <div id="sizesContainer">
+                    <h3>Sizes:</h3>
+                    <!-- Sizes will be added here dynamically -->
+                </div>
+                
+                <button type="button" id="addSizeButton">Add Size</button>
+                
+                <div class="form-buttons">
+                    <button type="submit" id="saveButton">Save</button>
+                    <button type="button" id="cancelButton">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('addSizeButton').addEventListener('click', function() {
+            const sizesContainer = document.getElementById('sizesContainer');
+            const sizeInput = document.createElement('div');
+            sizeInput.classList.add('size-input');
+            sizeInput.innerHTML = `
+                <input type="text" name="size[]" placeholder="Enter size" required>
+                <select name="unit[]">
+                    <option value="mm">mm</option>
+                    <option value="cm">cm</option>
+                    <option value="m">m</option>
+                </select>
+            `;
+            sizesContainer.appendChild(sizeInput);
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', function() {
+            window.close();
+        });
+
+        document.getElementById('categoryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Save the category and sizes logic goes here
+            alert('Category saved successfully!');
+            window.close();
+        });
+    </script>
+</body>
+</html>

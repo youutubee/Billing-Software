@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Window</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Main container for the page content -->
+    <div class="container">
+        <!-- Header section on the right-hand side -->
+        <header class="header">
+            <!-- Heading with yellow background and bold text -->
+            <h1>Kashish Enterprises</h1>
+        </header>
+        <!-- Button container on the right-hand side -->
+        <div class="button-container">
+            <!-- Inventory button -->
+            <button class="main-button" onclick="openInventory()">Inventory</button>
+            <!-- Billing button -->
+            <button class="main-button" onclick="openBilling()">Billing</button>
+            <!-- Settings button -->
+            <button class="main-button" onclick="openSettings()">Settings</button>
+        </div>
+    </div>
+
+    <!-- JavaScript functions to handle button clicks -->
+    <script>
+        // Function to open the Inventory window
+        function openInventory() {
+            window.location.href = 'inventory.html';
+        }
+
+        // Function to open the Billing window
+        function openBilling() {
+            window.location.href = 'billing.html';
+        }
+
+        // Function to open the Settings window
+        function openSettings() {
+            window.location.href = 'settings.html';
+        }
+    </script>
+</body>
+</html>
